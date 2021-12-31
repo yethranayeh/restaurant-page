@@ -9,10 +9,10 @@ function loadPageContent(image) {
 		// bannerImg.src = image;
 
 		let headingText = document.createElement("h1");
-		headingText.textContent = "Coffee & Inspiration: The Restaurant";
+		headingText.textContent = "Restaurant Title";
 
 		let slogan = document.createElement("p");
-		slogan.textContent = "Really cool restaurant slogan";
+		slogan.textContent = "Restaurant slogan";
 
 		// header.appendChild(bannerImg);
 		header.appendChild(headingText);
@@ -38,6 +38,7 @@ function loadPageContent(image) {
 
 		navLinks.forEach((link) => {
 			link.href = "#";
+			link.classList.add("tab");
 			navbar.appendChild(link);
 		});
 
@@ -62,10 +63,14 @@ function loadPageContent(image) {
 	})();
 
 	let contentArea = document.querySelector("#content");
-	contentArea.appendChild(header);
-	contentArea.appendChild(navbar);
-	contentArea.appendChild(main);
+	let pageContent = document.createElement("div");
+	pageContent.appendChild(header);
+	pageContent.appendChild(navbar);
+	pageContent.appendChild(main);
+	contentArea.appendChild(pageContent);
 	contentArea.appendChild(footer);
+
+	return contentArea;
 }
 
 export { loadPageContent };

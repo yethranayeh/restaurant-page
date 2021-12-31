@@ -4,7 +4,8 @@
 	--bg-body: #eee;
 	--bg-navbar: bisque;
 	--bg-footer: aqua;
-	--color-link: #444;
+	--color-link: #777;
+	--color-link-active: #444;
 }
 
 *,
@@ -30,6 +31,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	height: 100vh;
 	/* align-items: center; */
 }
 
@@ -41,19 +43,24 @@ nav {
 	background-color: var(--bg-navbar);
 	display: flex;
 	justify-content: space-evenly;
-	padding: 6px 0;
+	padding: 10px 0;
 }
 
-nav a {
+.tab {
 	display: inline-block;
 	position: relative;
 	/* left: 50%;
 	transform: translateX(-50%); */
 	color: var(--color-link);
 	font-size: 26px;
+	transition: color 200ms ease-out;
 }
 
-nav a::before {
+.tab:hover {
+	color: var(--color-link-active);
+}
+
+.tab::before {
 	content: "";
 	position: absolute;
 	background-color: var(--color-link);
@@ -65,11 +72,11 @@ nav a::before {
 	transition: height 200ms ease-out;
 }
 
-nav a:hover::before {
+.tab:hover::before {
 	height: 0%;
 }
 
-nav a::after {
+.tab::after {
 	content: "";
 	display: block;
 	position: absolute;
@@ -77,12 +84,21 @@ nav a::after {
 	width: 0;
 	height: 2px;
 	left: -6px;
-	/* margin-top: 4px; */
-	transition: margin-top 100ms ease-out, width 200ms 150ms ease-in;
+	transition: margin-top 200ms ease-out, width 200ms 150ms ease-in, background-color 150ms 50ms ease-in;
 }
 
-nav a:hover::after {
+.tab:hover::after,
+.active-tab::after {
+	background-color: var(--color-link-active);
 	width: 120%;
+}
+
+.active-tab::before {
+	height: 0%;
+}
+
+.active-tab::after {
+	margin-top: 7px;
 }
 
 .container {
