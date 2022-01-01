@@ -30,6 +30,7 @@ function tabClickHandler(target) {
 	target.classList.add("active-tab");
 
 	// Change main content, only if it is not already active
+	// TODO: DRY up the code. A lot of repetition for animation handling.
 	if (target.textContent === "Home" && !(currentTab === "Home")) {
 		mainContentArea.classList.add("slide-out--left");
 		document.querySelector(".slide-out--left").onanimationend = () => {
@@ -66,7 +67,3 @@ function tabClickHandler(target) {
 		};
 	}
 }
-
-// homeContent.init();
-// menuContent.init();
-// contactContent.init();
