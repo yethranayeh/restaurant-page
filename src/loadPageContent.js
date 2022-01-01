@@ -38,7 +38,7 @@ function loadPageContent() {
 		navLinks.push(homeTab, menuTab, contactTab);
 
 		navLinks.forEach((link) => {
-			link.href = "#";
+			link.href = "javascript:void(0)";
 			link.classList.add("tab");
 			navbar.appendChild(link);
 		});
