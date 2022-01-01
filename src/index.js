@@ -1,10 +1,9 @@
 /** @format */
-import bannerImg from "./banner.jpg";
 import "./style.css";
 import { loadPageContent } from "./loadPageContent.js";
 import { homeContent, menuContent, contactContent } from "./tabContentModules";
 
-const contentArea = loadPageContent(bannerImg);
+const contentArea = loadPageContent();
 const mainContentArea = contentArea.querySelector("main");
 mainContentArea.appendChild(homeContent.init());
 

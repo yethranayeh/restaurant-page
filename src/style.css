@@ -10,7 +10,7 @@
 	--color-link-active: #79796a;
 	--color-tab-shadow: #a5a58d;
 	--color-tab-shadow-none: #a5a58d00;
-	--color-unset: #ddbea9;
+	--color-card: #ddbea9;
 	--font-header: "Secular One", sans-serif;
 	--font-slogan: "Vujahday Script", cursive;
 	--font-link: "Yanone Kaffeesatz", sans-serif;
@@ -180,7 +180,7 @@ nav {
 /* Main content */
 main {
 	background-color: var(--bg-body);
-	padding: 10px 20px;
+	padding: 20px 20px;
 	font-family: var(--font-paragraph);
 	font-weight: var(--font-paragraph-weight);
 	font-size: 2em;
@@ -189,6 +189,76 @@ main {
 /* Main: Home */
 
 /* Main: Menu */
+.menu {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.card {
+	flex: 1 0 25%;
+	width: 150px;
+	height: 400px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	position: relative;
+	padding: 10px;
+	background-color: var(--color-card);
+	box-shadow: 1px 1px 5px var(--color-tab-shadow), 1px 1px 5px var(--color-tab-shadow-none) inset;
+	transition: box-shadow 250ms ease-out, background-image 250ms ease-out;
+}
+
+.card:hover {
+	box-shadow: 1px 1px 5px var(--color-tab-shadow-none), 1px 1px 5px var(--color-tab-shadow) inset;
+}
+
+.card::before {
+	content: "";
+	background-image: url(https://static.wixstatic.com/media/2cd43b_5eda7ec29fd24b1dbcfe77050b4b3eb7~mv2.png/v1/fit/w_1000,h_552,q_90/2cd43b_5eda7ec29fd24b1dbcfe77050b4b3eb7~mv2.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transition: transform 300ms ease-in-out;
+}
+
+.card:hover::before {
+	transform: scale(0.6) translateY(-50%);
+}
+
+.description {
+	color: var(--bg-body);
+	background-color: var(--color-header);
+	border-radius: 5px;
+	padding: 5px 12px;
+	transform: translateY(120%);
+	transition: transform 250ms ease-out;
+}
+
+.description h2 {
+	font-size: 0.7em;
+	text-align: center;
+	text-decoration: underline;
+	margin-bottom: 2px;
+}
+
+.description p {
+	font-size: 0.6em;
+}
+
+.description span {
+	color: var(--bg-footer);
+	font-size: 0.5em;
+	font-style: italic;
+}
+
+.card:hover .description {
+	transform: translateY(0px);
+}
 
 /* Main: Contact */
 

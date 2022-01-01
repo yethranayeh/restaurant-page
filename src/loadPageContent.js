@@ -1,6 +1,6 @@
 /** @format */
 
-function loadPageContent(image) {
+function loadPageContent() {
 	let header = (function () {
 		let header = document.createElement("header");
 		header.classList.add("container", "disable-select");
