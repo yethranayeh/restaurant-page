@@ -7,6 +7,8 @@
 	--color-header: #333;
 	--color-link: #777;
 	--color-link-active: #444;
+	--color-tab-shadow: #00ffff;
+	--color-tab-shadow-none: #00ffff00;
 }
 
 /* General */
@@ -74,6 +76,7 @@ nav {
 	display: flex;
 	justify-content: space-evenly;
 	padding: 10px 0;
+	box-shadow: 1px 1px 5px var(--color-header) inset;
 }
 
 .tab {
@@ -99,11 +102,13 @@ nav {
 	bottom: 10px;
 	transform: translateY(10px);
 	margin-left: -6px;
-	transition: height 200ms ease-out;
+	box-shadow: 2px 0px 4px var(--color-tab-shadow);
+	transition: height 200ms ease-out, box-shadow 250ms ease-out;
 }
 
 .tab:hover::before {
 	height: 0%;
+	box-shadow: 2px 0px 4px var(--color-tab-shadow-none);
 }
 
 .tab::after {
@@ -114,7 +119,9 @@ nav {
 	width: 0;
 	height: 2px;
 	left: -6px;
-	transition: margin-top 200ms ease-out, width 200ms 150ms ease-in, background-color 150ms 50ms ease-in;
+	box-shadow: 0px 2px 4px var(--color-tab-shadow-none);
+	transition: margin-top 200ms ease-out, width 200ms 150ms ease-in, background-color 150ms 50ms ease-in,
+		box-shadow 250ms 50ms ease-out;
 }
 
 .tab:hover::after,
@@ -123,12 +130,17 @@ nav {
 	width: 120%;
 }
 
+.active-tab {
+	color: var(--color-link-active);
+}
+
 .active-tab::before {
 	height: 0%;
 }
 
 .active-tab::after {
 	margin-top: 7px;
+	box-shadow: 0px 2px 4px var(--color-tab-shadow);
 }
 
 /* Main content */
