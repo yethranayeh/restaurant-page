@@ -354,9 +354,14 @@ main {
 /* footer */
 footer {
 	background-color: var(--bg-footer);
+	padding: 10px 0;
+	box-shadow: 1px 1px 5px var(--color-header) inset;
+}
+
+footer p {
 	font-family: var(--font-footer);
 	font-weight: var(--font-footer-weight);
-	font-size: 1.5em;
+	font-size: 1.2em;
 }
 
 /* Responsive */

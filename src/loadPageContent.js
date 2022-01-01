@@ -57,7 +57,7 @@ function loadPageContent() {
 		let footer = document.createElement("footer");
 		footer.classList.add("container");
 		let paragraph = document.createElement("p");
-		paragraph.textContent = "Lorem ipsum bla bla bla";
+		paragraph.textContent = "Copyright © 2021 Alper Aktaş | Made with 🖤 for The Odin Project";
 		footer.appendChild(paragraph);
 
 		return footer;
