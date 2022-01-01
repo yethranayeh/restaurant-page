@@ -6,6 +6,7 @@ import { homeContent, menuContent, contactContent } from "./tabContentModules";
 
 const contentArea = loadPageContent(bannerImg);
 const mainContentArea = contentArea.querySelector("main");
+mainContentArea.appendChild(homeContent.init());
 
 // Tab switching
 const tabs = contentArea.querySelectorAll(".tab");

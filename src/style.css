@@ -1,14 +1,15 @@
 /** @format */
 
 :root {
-	--bg-body: #eee;
-	--bg-navbar: bisque;
-	--bg-footer: aqua;
-	--color-header: #333;
-	--color-link: #777;
-	--color-link-active: #444;
-	--color-tab-shadow: #00ffff;
-	--color-tab-shadow-none: #00ffff00;
+	--bg-body: #f0efeb;
+	--bg-navbar: #fff1e6;
+	--bg-main: #ddbea9;
+	--bg-footer: #eddcd2;
+	--color-header: #403d39;
+	--color-link: #b7b7a4;
+	--color-link-active: #79796a;
+	--color-tab-shadow: #a5a58d;
+	--color-tab-shadow-none: #a5a58d00;
 }
 
 /* General */
@@ -56,13 +57,13 @@ a {
 header {
 	background-repeat: no-repeat;
 	background-size: cover;
-	padding: 30px;
+	padding: 10px;
 }
 
 header h1 {
 	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
 	font-size: 6em;
-	padding: 10px 10px;
+	margin-bottom: 10px;
 	/* text-align: center; */
 	text-transform: uppercase;
 	text-rendering: optimizeLegibility;
@@ -147,10 +148,17 @@ nav {
 
 .active-tab::after {
 	margin-top: 8px;
-	box-shadow: 0px 2px 4px var(--color-tab-shadow);
+	box-shadow: 0px 2px 4px var(--color-tab-shadow), 0px 4px 7px var(--color-tab-shadow);
 }
 
 /* Main content */
+main {
+	background: var(--bg-main);
+	background: -webkit-linear-gradient(bottom, var(--bg-body), var(--bg-main));
+	background: -moz-linear-gradient(bottom, var(--bg-body), var(--bg-main));
+	background: linear-gradient(to top, var(--bg-body), var(--bg-main));
+	padding: 10px 20px;
+}
 
 /* footer */
 footer {

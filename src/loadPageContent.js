@@ -27,6 +27,7 @@ function loadPageContent(image) {
 
 		let homeTab = document.createElement("a");
 		homeTab.textContent = "Home";
+		homeTab.classList.add("active-tab");
 
 		let menuTab = document.createElement("a");
 		menuTab.textContent = "Menu";
