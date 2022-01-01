@@ -4,11 +4,10 @@ function loadPageContent(image) {
 	let header = (function () {
 		let header = document.createElement("header");
 		header.classList.add("container");
-		header.style.backgroundImage = `url(${image})`;
-		// let bannerImg = document.createElement("img");
-		// bannerImg.src = image;
+		// header.style.backgroundImage = `url(${image})`;
 
 		let headingText = document.createElement("h1");
+		headingText.classList.add("retroshadow");
 		headingText.textContent = "Restaurant Title";
 
 		let slogan = document.createElement("p");

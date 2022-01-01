@@ -4,9 +4,12 @@
 	--bg-body: #eee;
 	--bg-navbar: bisque;
 	--bg-footer: aqua;
+	--color-header: #333;
 	--color-link: #777;
 	--color-link-active: #444;
 }
+
+/* General */
 
 *,
 *::before,
@@ -17,14 +20,12 @@
 	vertical-align: baseline;
 }
 
-header {
-	background-repeat: no-repeat;
-	background-size: cover;
-	padding: 30px;
-}
-
 body {
 	background-color: var(--bg-body);
+}
+
+a {
+	text-decoration: none;
 }
 
 #content {
@@ -35,9 +36,38 @@ body {
 	/* align-items: center; */
 }
 
-a {
-	text-decoration: none;
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
+
+/* Header */
+
+header {
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 30px;
+}
+
+header h1 {
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	font-size: 6em;
+	padding: 10px 10px;
+	/* text-align: center; */
+	text-transform: uppercase;
+	text-rendering: optimizeLegibility;
+}
+
+/* Retroshadow by juanbrujo at codepen.io */
+.retroshadow {
+	color: var(--color-header);
+
+	letter-spacing: 0.05em;
+	text-shadow: 4px 4px 0px #d5d5d5, 7px 7px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* Navigation */
 
 nav {
 	background-color: var(--bg-navbar);
@@ -101,11 +131,7 @@ nav {
 	margin-top: 7px;
 }
 
-.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
+/* Main content */
 
 /* footer */
 footer {
