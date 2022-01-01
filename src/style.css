@@ -3,13 +3,22 @@
 :root {
 	--bg-body: #f0efeb;
 	--bg-navbar: #fff1e6;
-	--bg-main: #ddbea9;
 	--bg-footer: #eddcd2;
 	--color-header: #403d39;
+	--color-slogan: #403d3983;
 	--color-link: #b7b7a4;
 	--color-link-active: #79796a;
 	--color-tab-shadow: #a5a58d;
 	--color-tab-shadow-none: #a5a58d00;
+	--color-unset: #ddbea9;
+	--font-header: "Secular One", sans-serif;
+	--font-slogan: "Vujahday Script", cursive;
+	--font-link: "Yanone Kaffeesatz", sans-serif;
+	--font-link-weight: 500;
+	--font-paragraph: "Yanone Kaffeesatz", sans-serif;
+	--font-paragraph-weight: 300;
+	--font-footer: "Yanone Kaffeesatz", sans-serif;
+	--font-footer-weight: 300;
 }
 
 /* General */
@@ -27,8 +36,15 @@ body {
 	background-color: var(--bg-body);
 }
 
+h1,
+h2 {
+	font-family: var(--font-header);
+}
+
 a {
 	text-decoration: none;
+	font-family: var(--font-link);
+	font-weight: var(--font-link-weight);
 }
 
 #content {
@@ -55,18 +71,27 @@ a {
 /* Header */
 
 header {
-	background-repeat: no-repeat;
-	background-size: cover;
+	/* background-image: linear-gradient(to right, #085467, #afa7bb, #f4c0b3); */
+	/* background-clip: text; */
+	/* background-repeat: no-repeat; */
+	/* background-size: cover; */
 	padding: 10px;
 }
 
 header h1 {
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+	/* font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif; */
 	font-size: 6em;
-	margin-bottom: 10px;
+	/* margin-bottom: 5px; */
 	/* text-align: center; */
 	text-transform: uppercase;
 	text-rendering: optimizeLegibility;
+}
+
+header p {
+	margin-top: -0.4em;
+	font-size: 2.6em;
+	font-family: var(--font-slogan);
+	color: var(--color-slogan);
 }
 
 /* Retroshadow by juanbrujo at codepen.io */
@@ -93,7 +118,8 @@ nav {
 	/* left: 50%;
 	transform: translateX(-50%); */
 	color: var(--color-link);
-	font-size: 26px;
+	font-size: 2em;
+	letter-spacing: 2px;
 	transition: color 200ms ease-out;
 }
 
@@ -153,14 +179,23 @@ nav {
 
 /* Main content */
 main {
-	background: var(--bg-main);
-	background: -webkit-linear-gradient(bottom, var(--bg-body), var(--bg-main));
-	background: -moz-linear-gradient(bottom, var(--bg-body), var(--bg-main));
-	background: linear-gradient(to top, var(--bg-body), var(--bg-main));
+	background-color: var(--bg-body);
 	padding: 10px 20px;
+	font-family: var(--font-paragraph);
+	font-weight: var(--font-paragraph-weight);
+	font-size: 2em;
 }
+
+/* Main: Home */
+
+/* Main: Menu */
+
+/* Main: Contact */
 
 /* footer */
 footer {
 	background-color: var(--bg-footer);
+	font-family: var(--font-footer);
+	font-weight: var(--font-footer-weight);
+	font-size: 1.5em;
 }
