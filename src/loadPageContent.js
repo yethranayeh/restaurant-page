@@ -3,7 +3,7 @@
 function loadPageContent(image) {
 	let header = (function () {
 		let header = document.createElement("header");
-		header.classList.add("container");
+		header.classList.add("container", "disable-select");
 		// header.style.backgroundImage = `url(${image})`;
 
 		let headingText = document.createElement("h1");
@@ -22,6 +22,7 @@ function loadPageContent(image) {
 
 	let navbar = (function () {
 		let navbar = document.createElement("nav");
+		navbar.classList.add("disable-select");
 		let navLinks = [];
 
 		let homeTab = document.createElement("a");
