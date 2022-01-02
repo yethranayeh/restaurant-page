@@ -43,9 +43,49 @@ const menuContent = {
 
 const contactContent = {
 	init: function () {
-		let p = document.createElement("p");
-		p.textContent = "Contact";
-		return p;
+		let form = document.createElement("form");
+
+		// Name
+		let labelName = document.createElement("label");
+		labelName.setAttribute("for", "inputName");
+		labelName.textContent = "Your name:";
+		let inputName = document.createElement("input");
+		inputName.id = "inputName";
+		inputName.required = true;
+
+		// E-mail
+		let labelEmail = document.createElement("label");
+		labelEmail.setAttribute("for", "inputEmail");
+		labelEmail.textContent = "E-mail:";
+		let inputEmail = document.createElement("input");
+		inputEmail.type = "email";
+		inputEmail.id = "inputEmail";
+		inputEmail.required = true;
+
+		// Message
+		let labelMessage = document.createElement("label");
+		labelMessage.setAttribute("for", "inputMessage");
+		labelMessage.textContent = "Message:";
+		let inputMessage = document.createElement("textarea");
+		inputMessage.id = "inputMessage";
+		inputMessage.required = true;
+
+		// Send Button
+		let btn = document.createElement("button");
+		btn.textContent = "Send";
+		let btnWrapper = document.createElement("div");
+		btnWrapper.classList.add("btn-wrapper");
+		btnWrapper.appendChild(btn);
+
+		form.appendChild(labelName);
+		form.appendChild(inputName);
+		form.appendChild(labelEmail);
+		form.appendChild(inputEmail);
+		form.appendChild(labelMessage);
+		form.appendChild(inputMessage);
+		form.appendChild(btnWrapper);
+
+		return form;
 	}
 };
 
