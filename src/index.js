@@ -43,23 +43,15 @@ function tabClickHandler(target) {
 	// Change main content, only if it is not already active
 	// TODO: DRY up the code. A lot of repetition for animation handling.
 	if (target.textContent === "Home" && !(currentTab === "Home")) {
-		mainContentArea.classList.add("slide-out--left");
-		document.querySelector(".slide-out--left").onanimationend = () => {
+		mainContentArea.classList.add("slide-out--right");
+		document.querySelector(".slide-out--right").onanimationend = () => {
 			mainContentArea.innerHTML = "";
 			mainContentArea.appendChild(homeContent.init());
 			removeAnimations(mainContentArea);
-			mainContentArea.classList.add("slide-in--right");
+			mainContentArea.classList.add("slide-in--left");
 		};
 	} else if (target.textContent === "Menu" && !(currentTab === "Menu")) {
 		if (currentTab === "Home") {
-			mainContentArea.classList.add("slide-out--right");
-			document.querySelector(".slide-out--right").onanimationend = () => {
-				mainContentArea.innerHTML = "";
-				mainContentArea.appendChild(menuContent.init(isMobile));
-				removeAnimations(mainContentArea);
-				mainContentArea.classList.add("slide-in--left");
-			};
-		} else {
 			mainContentArea.classList.add("slide-out--left");
 			document.querySelector(".slide-out--left").onanimationend = () => {
 				mainContentArea.innerHTML = "";
@@ -67,14 +59,22 @@ function tabClickHandler(target) {
 				removeAnimations(mainContentArea);
 				mainContentArea.classList.add("slide-in--right");
 			};
+		} else {
+			mainContentArea.classList.add("slide-out--right");
+			document.querySelector(".slide-out--right").onanimationend = () => {
+				mainContentArea.innerHTML = "";
+				mainContentArea.appendChild(menuContent.init(isMobile));
+				removeAnimations(mainContentArea);
+				mainContentArea.classList.add("slide-in--left");
+			};
 		}
 	} else if (target.textContent === "Contact" && !(currentTab === "Contact")) {
-		mainContentArea.classList.add("slide-out--right");
-		document.querySelector(".slide-out--right").onanimationend = () => {
+		mainContentArea.classList.add("slide-out--left");
+		document.querySelector(".slide-out--left").onanimationend = () => {
 			mainContentArea.innerHTML = "";
 			mainContentArea.appendChild(contactContent.init());
 			removeAnimations(mainContentArea);
-			mainContentArea.classList.add("slide-in--left");
+			mainContentArea.classList.add("slide-in--right");
 		};
 	}
 }
