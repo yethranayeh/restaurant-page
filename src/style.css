@@ -354,7 +354,8 @@ main {
 /* footer */
 footer {
 	background-color: var(--bg-footer);
-	padding: 10px 0;
+	padding: 10px 10px;
+	text-align: center;
 	box-shadow: 1px 1px 5px var(--color-header) inset;
 }
 
