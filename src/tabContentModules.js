@@ -9,9 +9,12 @@ const homeContent = {
 };
 
 const menuContent = {
-	init: function () {
-		let wrapper = document.createElement("div");
-		wrapper.classList.add("menu");
+	init: function (isMobile) {
+		let menu = document.createElement("div");
+		menu.classList.add("menu");
+		if (isMobile) {
+			menu.classList.add("mobile");
+		}
 
 		for (let i = 0; i < 6; i++) {
 			let card = document.createElement("div");
@@ -31,10 +34,10 @@ const menuContent = {
 			desc.appendChild(price);
 
 			card.appendChild(desc);
-			wrapper.appendChild(card);
+			menu.appendChild(card);
 		}
 
-		return wrapper;
+		return menu;
 	}
 };
 

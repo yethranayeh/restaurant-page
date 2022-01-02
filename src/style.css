@@ -299,7 +299,8 @@ main {
 	transition: box-shadow 250ms ease-out, background-image 250ms ease-out;
 }
 
-.card:hover {
+.card:hover,
+.mobile .card {
 	box-shadow: 1px 1px 5px var(--color-tab-shadow-none), 1px 1px 5px var(--color-tab-shadow) inset;
 }
 
@@ -315,7 +316,8 @@ main {
 	transition: transform 300ms ease-in-out;
 }
 
-.card:hover::before {
+.card:hover::before,
+.mobile .card::before {
 	transform: scale(0.6) translateY(-50%);
 }
 
@@ -345,7 +347,8 @@ main {
 	font-style: italic;
 }
 
-.card:hover .description {
+.card:hover .description,
+.mobile .card .description {
 	transform: translateY(0px);
 }
 

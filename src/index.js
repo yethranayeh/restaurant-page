@@ -3,6 +3,17 @@ import "./style.css";
 import { loadPageContent } from "./loadPageContent.js";
 import { homeContent, menuContent, contactContent } from "./tabContentModules";
 
+// Check if mobile,
+let isMobile = false;
+if (
+	/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(
+		navigator.userAgent
+	)
+) {
+	// true for mobile device
+	isMobile = true;
+}
+
 const contentArea = loadPageContent();
 const mainContentArea = contentArea.querySelector("main");
 mainContentArea.appendChild(homeContent.init());
@@ -44,7 +55,7 @@ function tabClickHandler(target) {
 			mainContentArea.classList.add("slide-out--right");
 			document.querySelector(".slide-out--right").onanimationend = () => {
 				mainContentArea.innerHTML = "";
-				mainContentArea.appendChild(menuContent.init());
+				mainContentArea.appendChild(menuContent.init(isMobile));
 				removeAnimations(mainContentArea);
 				mainContentArea.classList.add("slide-in--left");
 			};
@@ -52,7 +63,7 @@ function tabClickHandler(target) {
 			mainContentArea.classList.add("slide-out--left");
 			document.querySelector(".slide-out--left").onanimationend = () => {
 				mainContentArea.innerHTML = "";
-				mainContentArea.appendChild(menuContent.init());
+				mainContentArea.appendChild(menuContent.init(isMobile));
 				removeAnimations(mainContentArea);
 				mainContentArea.classList.add("slide-in--right");
 			};
