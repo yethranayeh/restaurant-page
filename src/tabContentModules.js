@@ -1,10 +1,21 @@
 /** @format */
 
 const homeContent = {
-	init: function () {
-		let p = document.createElement("p");
-		p.textContent = "Home";
-		return p;
+	init: function (rName, banner) {
+		const container = document.createElement("div");
+		container.classList.add("home-wrapper");
+
+		const greeting = document.createElement("div");
+		greeting.classList.add("greeting");
+		greeting.style.backgroundImage = `url(${banner})`;
+
+		const about = document.createElement("p");
+		about.textContent = `You've found the perfect spot to have a hearty meal for dinner with family and friends. ${rName} is a fusion restaurant where cuisines from all around the world are brought together to create the perfect bite!`;
+
+		container.appendChild(greeting);
+		container.appendChild(about);
+
+		return container;
 	}
 };
 

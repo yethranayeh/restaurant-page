@@ -1,6 +1,6 @@
 /** @format */
 
-function loadPageContent() {
+function loadPageContent(rName, rSlogan) {
 	let header = (function () {
 		let header = document.createElement("header");
 		header.classList.add("container", "disable-select");
@@ -8,10 +8,10 @@ function loadPageContent() {
 
 		let headingText = document.createElement("h1");
 		headingText.classList.add("retroshadow");
-		headingText.textContent = "Restaurant Title";
+		headingText.textContent = rName;
 
 		let slogan = document.createElement("p");
-		slogan.textContent = "Restaurant slogan";
+		slogan.textContent = rSlogan;
 
 		// header.appendChild(bannerImg);
 		header.appendChild(headingText);
