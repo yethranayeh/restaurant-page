@@ -326,21 +326,21 @@ main {
 	box-shadow: 1px 1px 5px var(--color-tab-shadow-none), 1px 1px 5px var(--color-tab-shadow) inset;
 }
 
-.card::before {
-	content: "";
-	background-image: url(https://static.wixstatic.com/media/2cd43b_5eda7ec29fd24b1dbcfe77050b4b3eb7~mv2.png/v1/fit/w_1000,h_552,q_90/2cd43b_5eda7ec29fd24b1dbcfe77050b4b3eb7~mv2.png);
-	background-position: center;
-	background-repeat: no-repeat;
+.card .bg-image {
+	width: 95%;
+	height: 50%;
 	background-size: contain;
-	width: 100%;
-	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
 	position: absolute;
+	/* left: 0; */
+	top: 25%;
 	transition: transform 300ms ease-in-out;
 }
 
-.card:hover::before,
-.mobile .card::before {
-	transform: scale(0.6) translateY(-50%);
+.card:hover .bg-image,
+.mobile .card .bg-image {
+	transform: scale(0.7) translateY(-75%);
 }
 
 .description {

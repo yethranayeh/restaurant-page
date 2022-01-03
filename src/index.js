@@ -2,6 +2,14 @@
 import "./style.css";
 import { loadPageContent } from "./loadPageContent.js";
 import { homeContent, menuContent, contactContent } from "./tabContentModules";
+import FriedWontons from "./images/fried-wontons.png";
+import ChickenWings from "./images/chicken-wings.png";
+import FriedChicken from "./images/fried-chicken.png";
+import GrilledSteak from "./images/grilled-steak.png";
+import Noodles from "./images/noodles.png";
+import FruitDish from "./images/fruit-dish.png";
+
+const images = [FriedWontons, ChickenWings, FriedChicken, GrilledSteak, Noodles, FruitDish];
 
 // Check if mobile,
 let isMobile = false;
@@ -55,7 +63,7 @@ function tabClickHandler(target) {
 			mainContentArea.classList.add("slide-out--left");
 			document.querySelector(".slide-out--left").onanimationend = () => {
 				mainContentArea.innerHTML = "";
-				mainContentArea.appendChild(menuContent.init(isMobile));
+				mainContentArea.appendChild(menuContent.init(isMobile, images));
 				removeAnimations(mainContentArea);
 				mainContentArea.classList.add("slide-in--right");
 			};
@@ -63,7 +71,7 @@ function tabClickHandler(target) {
 			mainContentArea.classList.add("slide-out--right");
 			document.querySelector(".slide-out--right").onanimationend = () => {
 				mainContentArea.innerHTML = "";
-				mainContentArea.appendChild(menuContent.init(isMobile));
+				mainContentArea.appendChild(menuContent.init(isMobile, images));
 				removeAnimations(mainContentArea);
 				mainContentArea.classList.add("slide-in--left");
 			};

@@ -9,8 +9,25 @@ const homeContent = {
 };
 
 const menuContent = {
-	init: function (isMobile) {
-		let menu = document.createElement("div");
+	init: function (isMobile, images) {
+		const menu = document.createElement("div");
+		const mealNames = [
+			"Fried Wontons",
+			"Baked Chicken Wings",
+			"Fried Chicken Nuggets",
+			"Grilled Steak",
+			"Shrimp Noodles",
+			"Fruit Dish"
+		];
+		const mealDesc = [
+			"Tender wrappers stuffed with ground pork, mushrooms and seasonings, then deep fried to crispy golden brown perfection. The savory pork filling inside of a crispy outer shell just can't be beat!",
+			"Coated in a homemade spice rub, these roasted to crispy perfection! A simple yet satisfying appetizer or meal option that feature a BBQ rub that adds tons of flavor.",
+			"Marinated in buttermilk, these fried chicken nuggets are coated in seasoned flour and deep fried to golden brown perfection!",
+			"A delicious steak with a nice contrast between the smoky, almost charred exterior and the deeply beefy interior. It is chin-drippingly juicy and melt-in-your-mouth tender!",
+			"This shrimp noodle plate is loaded with not just the best flavors, but with veggies and shrimps. Makes a perfectly filling lunch.",
+			"It's an incredibly refreshing dish that's made with beautiful blend of delicious fruits and a simple dressing to compliment it."
+		];
+		const mealPrices = ["1.50", "3.10", "2.80", "8.50", "3.50", "5.60"];
 		menu.classList.add("menu");
 		if (isMobile) {
 			menu.classList.add("mobile");
@@ -19,21 +36,34 @@ const menuContent = {
 		for (let i = 0; i < 6; i++) {
 			let card = document.createElement("div");
 			card.classList.add("card");
+
+			// Background Image Container
+			let imageContainer = document.createElement("div");
+			imageContainer.classList.add("bg-image");
+			imageContainer.style.backgroundImage = `url(${images[i]})`;
+
+			// Description Container
 			let desc = document.createElement("div");
 			desc.classList.add("description");
 
 			let h2 = document.createElement("h2");
-			h2.textContent = "Product Name";
+			h2.textContent = mealNames[i];
+
 			let p = document.createElement("p");
-			p.textContent =
-				"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.";
+			p.textContent = mealDesc[i];
+
 			let price = document.createElement("span");
-			price.textContent = "Price: $1.45";
+			price.textContent = `Price: $${mealPrices[i]}`;
+
 			desc.appendChild(h2);
 			desc.appendChild(p);
 			desc.appendChild(price);
 
+			// Add elements to card
+			card.appendChild(imageContainer);
 			card.appendChild(desc);
+
+			// Add card to menu
 			menu.appendChild(card);
 		}
 
