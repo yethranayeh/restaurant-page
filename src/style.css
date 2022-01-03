@@ -135,6 +135,8 @@ header p {
 /* Navigation */
 
 nav {
+	position: relative;
+	z-index: 99;
 	background-color: var(--bg-navbar);
 	display: flex;
 	justify-content: space-evenly;
@@ -207,6 +209,8 @@ nav {
 
 /* Main content */
 main {
+	position: relative;
+	z-index: 1;
 	background-color: var(--bg-body);
 	padding: 20px 20px;
 	font-family: var(--font-paragraph);
