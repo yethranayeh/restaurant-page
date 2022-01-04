@@ -1,19 +1,106 @@
 /** @format */
 
 const homeContent = {
-	init: function (rName, banner) {
+	init: function (rName, images) {
+		const REVIEWS = {
+			customer1: [
+				"John Doe",
+				"5",
+				"The service was impressive and we couldn't wait to be seated. We ordered the Grilled Steak which was the best we have had in a while.",
+				"M"
+			],
+			customer2: [
+				"Jane Smith",
+				"4",
+				"This place had a lot of heart. The waitress was prompt and polite. I found the ambiance to be very charming. I could see myself being a regular here.",
+				"F"
+			],
+			customer3: [
+				"Joe Schmoe",
+				"4",
+				"Decent place. I was happy to see how clean everything was. I had a satisfactory experience and will have to try it again.",
+				"M"
+			],
+			customer4: [
+				"Jessica Doe",
+				"5",
+				"Oh! My! God! So awesome! The food was cooked to perfection. The waiter did an excellent job. Easily earned their 5 stars!",
+				"F"
+			]
+		};
+
 		const container = document.createElement("div");
 		container.classList.add("home-wrapper");
 
 		const greeting = document.createElement("div");
 		greeting.classList.add("greeting");
-		greeting.style.backgroundImage = `url(${banner})`;
-
-		const about = document.createElement("p");
-		about.textContent = `You've found the perfect spot to have a hearty meal for dinner with family and friends. ${rName} is a fusion restaurant where cuisines from all around the world are brought together to create the perfect bite!`;
+		greeting.style.backgroundImage = `url(${images[0]})`;
 
 		container.appendChild(greeting);
-		container.appendChild(about);
+
+		// About cards
+		// TODO: DRY up the code. Bad variable naming and repetition of same code
+		const card = document.createElement("div");
+		card.classList.add("card-horizontal");
+		const img1 = document.createElement("img");
+		img1.src = images[1];
+		const card1Text = document.createElement("p");
+		card1Text.textContent = "You've found the perfect spot to have a hearty meal for dinner with family and friends.";
+		card.appendChild(img1);
+		card.appendChild(card1Text);
+
+		const card2 = document.createElement("div");
+		card2.classList.add("card-horizontal", "reversed");
+		const img2 = document.createElement("img");
+		img2.src = images[2];
+		const card2Text = document.createElement("p");
+		card2Text.textContent = `${rName} is a fusion restaurant where cuisines from all around the world are brought together to create the perfect bite!`;
+		card2.appendChild(img2);
+		card2.appendChild(card2Text);
+
+		const cardWrapper = document.createElement("div");
+		cardWrapper.classList.add("card-wrapper");
+		cardWrapper.appendChild(card);
+		cardWrapper.appendChild(card2);
+
+		container.appendChild(cardWrapper);
+
+		// Reviews
+		let reviewWrapper = document.createElement("div");
+		reviewWrapper.classList.add("reviews");
+		for (let customer in REVIEWS) {
+			let card = document.createElement("div");
+			card.classList.add("review");
+
+			let image = document.createElement("div");
+			image.style.backgroundImage = `url(${images[3]})`;
+			if (REVIEWS[customer][3] === "M") {
+				image.classList.add("male");
+			} else {
+				image.classList.add("female");
+			}
+
+			let revName = document.createElement("span");
+			revName.textContent = REVIEWS[customer][0];
+
+			let revStars = document.createElement("span");
+			for (let i = Number(REVIEWS[customer][1]); i > 0; i--) {
+				let star = document.createElement("i");
+				star.classList.add("fas", "fa-star");
+				revStars.appendChild(star);
+			}
+
+			let revDesc = document.createElement("p");
+			revDesc.textContent = REVIEWS[customer][2];
+
+			card.appendChild(image);
+			card.appendChild(revName);
+			card.appendChild(revStars);
+			card.appendChild(revDesc);
+
+			reviewWrapper.appendChild(card);
+		}
+		container.appendChild(reviewWrapper);
 
 		return container;
 	}

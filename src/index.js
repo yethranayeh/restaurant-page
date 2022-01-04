@@ -2,14 +2,17 @@
 import "./style.css";
 import { loadPageContent } from "./loadPageContent.js";
 import { homeContent, menuContent, contactContent } from "./tabContentModules";
+import FavIcon from "./images/favicon.png";
+import greetingBanner from "./images/greeting-banner.jpg";
+import Gathering from "./images/gathering.jpg";
+import Cuisine from "./images/cuisine.jpg";
+import Avatars from "./images/avatars.png";
 import FriedWontons from "./images/fried-wontons.png";
 import ChickenWings from "./images/chicken-wings.png";
 import FriedChicken from "./images/fried-chicken.png";
 import GrilledSteak from "./images/grilled-steak.png";
 import Noodles from "./images/noodles.png";
 import FruitDish from "./images/fruit-dish.png";
-import greetingBanner from "./images/greeting-banner.jpg";
-import FavIcon from "./images/favicon.png";
 
 const restaurantName = "The Melting Pot";
 const restaurantSlogan = "Where cuisines fuse together!";
@@ -34,9 +37,10 @@ if (
 	isMobile = true;
 }
 
+// Initialize Page
 const contentArea = loadPageContent(restaurantName, restaurantSlogan);
 const mainContentArea = contentArea.querySelector("main");
-mainContentArea.appendChild(homeContent.init(restaurantName, greetingBanner));
+mainContentArea.appendChild(homeContent.init(restaurantName, [greetingBanner, Gathering, Cuisine, Avatars]));
 
 // Tab switching
 const tabs = contentArea.querySelectorAll(".tab");
@@ -66,7 +70,7 @@ function tabClickHandler(target) {
 		mainContentArea.classList.add("slide-out--right");
 		document.querySelector(".slide-out--right").onanimationend = () => {
 			mainContentArea.innerHTML = "";
-			mainContentArea.appendChild(homeContent.init(restaurantName, greetingBanner));
+			mainContentArea.appendChild(homeContent.init(restaurantName, [greetingBanner, Gathering, Cuisine, Avatars]));
 			removeAnimations(mainContentArea);
 			mainContentArea.classList.add("slide-in--left");
 		};
