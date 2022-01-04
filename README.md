@@ -16,6 +16,9 @@ It consists of a Home page, a Menu page and a Contact page. All page content is 
   - `style-loader`
   - `css-loader`
 
+## Issues
+1. Mobile based permanent hover states for menu cards seems to have been broken in production. The expected behavior was to have meal description always visible instead of hover-only when using mobile. Currently mobile users will be unable to see meal descriptions, only their pictures.
+
 ## Credits
 
 - Favicon: <a target="_blank" href="https://icons8.com/icon/97309/paella">Paella</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
