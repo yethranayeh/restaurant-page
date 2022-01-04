@@ -41,8 +41,9 @@ const homeContent = {
 		// About cards
 		// TODO: DRY up the code. Bad variable naming and repetition of same code
 		const card = document.createElement("div");
-		card.classList.add("card-horizontal");
+		card.classList.add("card-horizontal", "bg-pattern");
 		const img1 = document.createElement("img");
+		img1.setAttribute("alt", "People gathered around table");
 		img1.src = images[1];
 		const card1Text = document.createElement("p");
 		card1Text.textContent = "You've found the perfect spot to have a hearty meal for dinner with family and friends.";
@@ -50,8 +51,9 @@ const homeContent = {
 		card.appendChild(card1Text);
 
 		const card2 = document.createElement("div");
-		card2.classList.add("card-horizontal", "reversed");
+		card2.classList.add("card-horizontal", "reversed", "bg-pattern");
 		const img2 = document.createElement("img");
+		img2.setAttribute("alt", "Table with plates of food");
 		img2.src = images[2];
 		const card2Text = document.createElement("p");
 		card2Text.textContent = `${rName} is a fusion restaurant where cuisines from all around the world are brought together to create the perfect bite!`;

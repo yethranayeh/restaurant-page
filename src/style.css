@@ -2,8 +2,7 @@
 
 :root {
 	--bg-body: #f0efeb;
-	--bg-navbar: #fff1e6;
-	--bg-footer: #eddcd2;
+	--bg-secondary: #fff1e6;
 	--color-primary: #403d39;
 	--color-primary-lighter: #403d39b4;
 	--color-secondary: #8b8b7e;
@@ -13,6 +12,7 @@
 	--color-tab-shadow: #a5a58d;
 	--color-tab-shadow-none: #a5a58d00;
 	--color-card: #ddbea9;
+	--color-soft: #eddcd2;
 	--font-header: "Secular One", sans-serif;
 	--font-slogan: "Vujahday Script", cursive;
 	--font-link: "Yanone Kaffeesatz", sans-serif;
@@ -88,8 +88,6 @@ button:active {
 	flex-direction: column;
 	justify-content: space-between;
 	height: 100vh;
-	/* align-items: center; */
-	/* transition: transform 250ms ease-out; */
 }
 
 .container {
@@ -103,6 +101,14 @@ button:active {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+}
+
+.bg-pattern {
+	background: linear-gradient(63deg, var(--color-card) 23%, transparent 23%) 7px 0,
+		linear-gradient(63deg, transparent 74%, var(--color-card) 78%),
+		linear-gradient(63deg, transparent 34%, var(--color-card) 38%, var(--color-card) 58%, transparent 62%),
+		var(--bg-secondary) !important;
+	background-size: 16px 48px !important;
 }
 
 /* Header */
@@ -139,7 +145,7 @@ header p {
 nav {
 	position: relative;
 	z-index: 99;
-	background-color: var(--bg-navbar);
+	background-color: var(--bg-secondary);
 	display: flex;
 	justify-content: space-evenly;
 	padding: 10px 0;
@@ -343,6 +349,7 @@ main {
 .card-horizontal p {
 	align-self: center;
 	padding: 10px;
+	text-shadow: 1px 1px 2px var(--color-primary);
 }
 
 .card-horizontal {
@@ -369,7 +376,11 @@ main {
 .card-horizontal img {
 	width: auto;
 	height: 100%;
-	border-radius: 5px;
+	box-shadow: 2px 0 20px;
+}
+
+.card-horizontal.reversed img {
+	box-shadow: -2px 0 20px !important;
 }
 
 .reviews {
@@ -391,7 +402,7 @@ main {
 	border: 3px solid var(--color-card);
 	border-radius: 10px;
 	color: var(--color-dark);
-	background-color: var(--bg-navbar);
+	background-color: var(--bg-secondary);
 	box-shadow: 0px 0px 5px var(--color-card);
 }
 
@@ -488,7 +499,7 @@ main {
 }
 
 .description span {
-	color: var(--bg-footer);
+	color: var(--color-soft);
 	font-size: 0.5em;
 	font-style: italic;
 }
@@ -546,7 +557,7 @@ textarea {
 	resize: none;
 	font-size: 0.7em;
 	padding: 5px 5px;
-	background-color: var(--bg-navbar);
+	background-color: var(--bg-secondary);
 	box-shadow: 1px 1px 5px var(--color-tab-shadow-none), 1px 1px 5px var(--color-tab-shadow) inset;
 	transition: box-shadow 250ms ease-out;
 }
@@ -561,7 +572,7 @@ textarea:focus {
 
 /* footer */
 footer {
-	background-color: var(--bg-footer);
+	background-color: var(--bg-secondary);
 	padding: 10px 10px;
 	text-align: center;
 	box-shadow: 1px 1px 5px var(--color-primary) inset;
