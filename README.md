@@ -7,7 +7,7 @@ Hello 👋
 Welcome to my imaginary restaurant page! 🍽
 
 This is a single page website, a mockup created for [The Odin Project](https://www.theodinproject.com).
-It consists of a Home page, a Menu page and a Contact page. All page content is created dynamically using `JavaScript`, except for the `link`s and `script`s, nothing is hard-coded to the `HTML`.
+It consists of a Home page, a Menu page and a Contact page. All page content is created dynamically using `JavaScript`. Except for the `link`s and `script`s, nothing is hard-coded to the `HTML`.
 
 ## Technologies Used
 
