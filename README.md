@@ -16,6 +16,15 @@ It consists of a Home page, a Menu page and a Contact page. All page content is 
   - `style-loader`
   - `css-loader`
 
+## Installation
+The `dist/` folder has the production files that are currently hosted on the Github Pages.
+
+If you would like to make changes and build from the source files, the `package.json` file contains the dependencies. 
+  - You should be able to run `npm install` or `npm install --dev` to automatically install the dependencies. 
+  - You can then
+    - run `npx webpack --watch` to let webpack *constantly* monitor a change in `src/` and build automatically 
+    - or `npm run build` to build whenever.
+
 ## Issues
 1. Mobile based permanent hover states for menu cards seems to have been broken in production. The expected behavior was to have meal description always visible instead of hover-only when using mobile. Currently mobile users will be unable to see meal descriptions, only their pictures.
 
