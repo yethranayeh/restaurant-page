@@ -35,6 +35,9 @@ if (
 ) {
 	// true for mobile device
 	isMobile = true;
+	console.warn("mobile");
+} else {
+	console.warn("not mobile");
 }
 
 // Initialize Page
